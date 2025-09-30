@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedição Interdisciplinar: Canadá</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #d52b1e, #ef4135);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Conteúdo principal */
+        main {
+            padding: 2rem 0;
+        }
+        
+        .hero {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .hero h2 {
+            color: #d52b1e;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        /* Seções */
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #d52b1e;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .disciplina-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .disciplina-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .disciplina-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .disciplina-card h3 {
+            color: #d52b1e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .disciplina-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .disciplina-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .disciplina-card ul {
+            padding-left: 1.5rem;
+        }
+        
+        .disciplina-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Gráficos */
+        .grafico {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .barra {
+            display: inline-block;
+            width: 30px;
+            margin: 0 5px;
+            background-color: #d52b1e;
+            border-radius: 4px 4px 0 0;
+            vertical-align: bottom;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .creditos {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 5px 10px;
+            }
+            
+            .disciplina-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>🌿 Expedição Interdisciplinar: Canadá</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#geografia">Geografia</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#portugues">Português</a></li>
+                    <li><a href="#matematica">Matemática</a></li>
+                    <li><a href="#ciencias">Ciências</a></li>
+                    <li><a href="#artes">Artes</a></li>
+                    <li><a href="#educacao-fisica">Educação Física</a></li>
+                    <li><a href="#ingles">Inglês</a></li>
+                    <li><a href="#filosofia">Filosofia</a></li>
+                    <li><a href="#economia">Economia</a></li>
+                    <li><a href="#tecnologia">Tecnologia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="inicio" class="hero">
+            <h2>Bem-vindo à Expedição Interdisciplinar: Canadá</h2>
+            <p>O Canadá é o segundo maior país do mundo em área territorial, conhecido por sua diversidade cultural, paisagens deslumbrantes e qualidade de vida excepcional. Nesta expedição interdisciplinar, exploraremos este fascinante país através de diferentes áreas do conhecimento.</p>
+            <img src="https://images.unsplash.com/photo-1519832979-6fa011b87667?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Paisagem canadense" class="hero-img">
+        </section>
+        
+        <section id="geografia">
+            <h2>🌎 Geografia</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Localização e Aspectos Físicos</h3>
+                    <p>O Canadá está localizado na América do Norte, estendendo-se do Oceano Atlântico ao Oceano Pacífico e ao norte até o Oceano Ártico. É o segundo maior país do mundo em área total.</p>
+                    <ul>
+                        <li><strong>Área:</strong> 9,98 milhões de km²</li>
+                        <li><strong>Fronteiras:</strong> Estados Unidos (sul e noroeste)</li>
+                        <li><strong>Clima:</strong> Varia de temperado no sul a polar no norte</li>
+                        <li><strong>Principais cadeias montanhosas:</strong> Montanhas Rochosas, Apalaches</li>
+                        <li><strong>Maiores rios:</strong> São Lourenço, Mackenzie, Yukon</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Montanhas Rochosas">
+                </div>
+                <div class="disciplina-card">
+                    <h3>Clima e Regiões</h3>
+                    <p>O Canadá possui um clima diversificado devido à sua vasta extensão territorial:</p>
+                    <ul>
+                        <li><strong>Oeste:</strong> Clima temperado com invernos amenos e verões quentes</li>
+                        <li><strong>Prárias:</strong> Clima continental com invernos frios e verões quentes</li>
+                        <li><strong>Centro:</strong> Clima continental úmido com quatro estações distintas</li>
+                        <li><strong>Atlântico:</strong> Clima marítimo com invernos frios e verões frescos</li>
+                        <li><strong>Norte:</strong> Clima polar com invernos extremamente frios</li>
+                    </ul>
+                    <p>O país possui seis fusos horários diferentes, refletindo sua extensão leste-oeste.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="historia">
+            <h2>📜 História</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Eventos Históricos Relevantes</h3>
+                    <p>A história do Canadá é marcada pela colonização europeia e pela formação de uma nação multicultural:</p>
+                    <ul>
+                        <li><strong>c. 1000 d.C.:</strong> Vikings estabelecem o primeiro assentamento europeu em Newfoundland</li>
+                        <li><strong>1534:</strong> Jacques Cartier reivindica a região para a França</li>
+                        <li><strong>1763:</strong> Tratado de Paris: França cede a Nova França para a Grã-Bretanha</li>
+                        <li><strong>1867:</strong> Confederação: criação do Domínio do Canadá</li>
+                        <li><strong>1931:</strong> Estatuto de Westminster: reconhecimento da independência</li>
+                        <li><strong>1982:</strong> Patriação da Constituição: Canadá adquire plena soberania</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1578839803235-0d91366088fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Parliament Hill em Ottawa">
+                </div>
+                <div class="disciplina-card">
+                    <h3>Cultura Local</h3>
+                    <p>O Canadá é conhecido por sua política de multiculturalismo, que celebra a diversidade cultural:</p>
+                    <ul>
+                        <li><strong>Línguas oficiais:</strong> Inglês e Francês</li>
+                        <li><strong>População indígena:</strong> Primeiras Nações, Inuit e Métis</li>
+                        <li><strong>Festivais:</strong> Caribana (Toronto), Festival de Jazz de Montreal, Stampede de Calgary</li>
+                        <li><strong>Culinária:</strong> Poutine, maple syrup, torta de butter tart, nanaimo bars</li>
+                        <li><strong>Símbolos nacionais:</strong> Folha de bordo, castor, hockey no gelo</li>
+                    </ul>
+                    <p>O país é reconhecido internacionalmente por sua tolerância e aceitação da diversidade.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portugues">
+            <h2>📝 Português</h2>
+            <div class="disciplina-card">
+                <h3>Reportagem: A Experiência Multicultural Canadense</h3>
+                <p>O Canadá se destaca no cenário internacional como um exemplo de nação que abraça a diversidade cultural. Com uma política de multiculturalismo oficialmente adotada desde 1971, o país construiu uma identidade nacional baseada no respeito às diferenças e na celebração da pluralidade.</p>
+                
+                <p>Andar pelas ruas de Toronto, Vancouver ou Montreal é como fazer uma viagem pelo mundo sem sair do lugar. Sotaques, tradições e gastronomias de todos os cantos do planeta se misturam harmoniosamente, criando um caldeirão cultural único. Esta miscigenação não é apenas tolerada, mas sim incentivada e valorizada como parte fundamental da identidade canadense.</p>
+                
+                <p>O sistema educacional reflete este compromisso com a diversidade. Nas escolas, crianças aprendem desde cedo sobre diferentes culturas e são encorajadas a manter suas heranças culturais enquanto abraçam os valores canadenses. Esta abordagem cria cidadãos globais, preparados para viver e trabalhar em um mundo cada vez mais interconectado.</p>
+                
+                <p>O resultado desta política de inclusão é uma sociedade coesa, apesar de sua diversidade. Pesquisas consistentemente mostram que os canadenses têm alto orgulho nacional e sentem que o multiculturalismo é uma característica definidora de seu país. Esta experiência bem-sucedida serve de inspiração para outras nações que buscam construir sociedades mais inclusivas.</p>
+                
+                <p>Contudo, o caminho não está livre de desafios. Questões relacionadas à integração de imigrantes, preservação de línguas minoritárias e reconciliação com as populações indígenas continuam a demandar atenção e esforços contínuos. Ainda assim, o modelo canadense demonstra que é possível construir uma nação forte e unida celebrando, em vez de temer, as diferenças.</p>
+            </div>
+        </section>
+        
+        <section id="matematica">
+            <h2>📊 Matemática</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Dados Populacionais</h3>
+                    <p>O Canadá possui uma população de aproximadamente 38 milhões de habitantes (2023), com densidade demográfica de cerca de 4 pessoas por km² - uma das mais baixas do mundo.</p>
+                    
+                    <div class="grafico">
+                        <h4>Distribuição Populacional por Província (em milhões)</h4>
+                        <div>
+                            <div style="height: 150px; display: flex; align-items: flex-end; justify-content: center;">
+                                <div class="barra" style="height: 140px;" title="Ontário: 14.7M"></div>
+                                <div class="barra" style="height: 90px;" title="Quebec: 8.5M"></div>
+                                <div class="barra" style="height: 50px;" title="Colúmbia Britânica: 5.1M"></div>
+                                <div class="barra" style="height: 45px;" title="Alberta: 4.4M"></div>
+                                <div class="barra" style="height: 18px;" title="Manitoba: 1.4M"></div>
+                                <div class="barra" style="height: 17px;" title="Saskatchewan: 1.2M"></div>
+                            </div>
+                        </div>
+                        <p>Ontário | Quebec | Colúmbia Britânica | Alberta | Manitoba | Saskatchewan</p>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Taxa de crescimento populacional:</strong> 0,9% ao ano</li>
+                        <li><strong>Expectativa de vida:</strong> 82,2 anos</li>
+                        <li><strong>Taxa de fertilidade:</strong> 1,5 filhos por mulher</li>
+                        <li><strong>População urbana:</strong> 81%</li>
+                    </ul>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Indicadores Econômicos</h3>
+                    <p>O Canadá possui uma das economias mais desenvolvidas e estáveis do mundo:</p>
+                    
+                    <div class="grafico">
+                        <h4>Composição do PIB por Setor (%)</h4>
+                        <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; border-radius: 50%; background: conic-gradient(#d52b1e 0% 70%, #ffcc00 70% 100%);"></div>
+                                <p>Serviços: 70%</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; border-radius: 50%; background: conic-gradient(#d52b1e 0% 28%, #ffcc00 28% 100%);"></div>
+                                <p>Indústria: 28%</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 80px; height: 80px; border-radius: 50%; background: conic-gradient(#d52b1e 0% 2%, #ffcc00 2% 100%);"></div>
+                                <p>Agricultura: 2%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul>
+                        <li><strong>PIB nominal:</strong> US$ 2,2 trilhões (2023)</li>
+                        <li><strong>PIB per capita:</strong> US$ 58.000 (2023)</li>
+                        <li><strong>Taxa de desemprego:</strong> 5,7% (2023)</li>
+                        <li><strong>Inflação:</strong> 3,8% (2023)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ciencias">
+            <h2>🔬 Ciências</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Ecossistemas e Biodiversidade</h3>
+                    <p>O Canadá abriga uma impressionante diversidade de ecossistemas, desde as florestas temperadas da costa oeste até a tundra ártica:</p>
+                    <ul>
+                        <li><strong>Florestas Boreais:</strong> Cobrem 35% do território, com abetos, pinheiros e álamos</li>
+                        <li><strong>Pradarias:</strong> Gramíneas nativas que sustentam uma rica fauna</li>
+                        <li><strong>Tundra Ártica:</strong> Vegetação rasteira adaptada ao clima extremo</li>
+                        <li><strong>Florestas Costeiras:</strong> Cedros vermelhos e abetos de Sitka na Colúmbia Britânica</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Floresta canadense">
+                </div>
+                <div class="disciplina-card">
+                    <h3>Fauna Característica</h3>
+                    <p>O Canadá é lar de diversas espécies animais adaptadas aos seus variados habitats:</p>
+                    <ul>
+                        <li><strong>Mamíferos:</strong> Urso-polar, urso-pardo, alce, caribu, lobo, castor, lontra</li>
+                        <li><strong>Aves:</strong> Grou-canadense, coruja-das-neves, gaivota, águia-careca</li>
+                        <li><strong>Espécies ameaçadas:</strong> Rena da floresta, baleia-franca-do-atlântico-norte, marmota-de-vancouver</li>
+                    </ul>
+                    <p>O país possui 47 parques nacionais e reservas que protegem estes ecossistemas únicos.</p>
+                    <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Urso-polar no Canadá">
+                </div>
+            </div>
+        </section>
+        
+        <section id="artes">
+            <h2>🎨 Artes</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Expressões Culturais</h3>
+                    <p>A cena artística canadense é vibrante e diversificada, com contribuições significativas em várias formas de arte:</p>
+                    <ul>
+                        <li><strong>Música:</strong> Artistas como Leonard Cohen, Joni Mitchell, Neil Young, Drake e The Weeknd</li>
+                        <li><strong>Cinema:</strong> Diretores como David Cronenberg, Atom Egoyan e Denis Villeneuve</li>
+                        <li><strong>Literatura:</strong> Autores como Margaret Atwood, Alice Munro (Nobel de Literatura) e Yann Martel</li>
+                        <li><strong>Artes visuais:</strong> Grupo dos Sete (pintura de paisagens), Emily Carr</li>
+                    </ul>
+                    <p>O Canadá também sedia importantes festivais de arte, como o Festival de Jazz de Montreal e o TIFF (Toronto International Film Festival).</p>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Arquitetura</h3>
+                    <p>A arquitetura canadense reflete sua história e diversidade regional:</p>
+                    <ul>
+                        <li><strong>Estilo Château:</strong> Edifícios como o Fairmont Le Château Frontenac em Quebec</li>
+                        <li><strong>Arquitetura indígena:</strong> Totens na costa oeste, iglus no norte</li>
+                        <li><strong>Modernismo:</strong> CN Tower em Toronto, Habitat 67 em Montreal</li>
+                        <li><strong>Arquitetura contemporânea:</strong> Museu de Antropologia em Vancouver, Galeria Nacional do Canadá em Ottawa</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1543499451-e03343c09d50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="CN Tower em Toronto">
+                </div>
+            </div>
+        </section>
+        
+        <section id="educacao-fisica">
+            <h2>⚽ Educação Física</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Esportes Populares</h3>
+                    <p>Os esportes desempenham um papel importante na cultura canadense, com destaque para:</p>
+                    <ul>
+                        <li><strong>Hóquei no gelo:</strong> Considerado o esporte nacional de inverno</li>
+                        <li><strong>Lacrosse:</strong> Considerado o esporte nacional de verão</li>
+                        <li><strong>Basquete:</strong> Inventado pelo canadense James Naismith</li>
+                        <li><strong>Curling:</strong> Esporte tradicional com forte presença no país</li>
+                        <li><strong>Futebol canadense:</strong> Variação do futebol americano</li>
+                    </ul>
+                    <p>O Canadá sediou os Jogos Olímpicos em Montreal (1976), Calgary (1988) e Vancouver (2010).</p>
+                    <img src="https://images.unsplash.com/photo-1547407139-3c921a66005c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Jogo de hóquei no gelo">
+                </div>
+                <div class="disciplina-card">
+                    <h3>Hábitos Saudáveis e Atividade Física</h3>
+                    <p>Os canadenses valorizam um estilo de vida ativo e saudável:</p>
+                    <ul>
+                        <li><strong>Atividades ao ar livre:</strong> Caminhadas, ciclismo, camping, canoagem</li>
+                        <li><strong>Esportes de inverno:</strong> Esqui, snowboard, patinação no gelo</li>
+                        <li><strong>Infraestrutura:</strong> Parques públicos, ciclovias, centros recreativos</li>
+                        <li><strong>Programas governamentais:</strong> Incentivo à atividade física em todas as idades</li>
+                    </ul>
+                    <p>Segundo estatísticas, mais de 80% dos canadenses praticam alguma forma de atividade física regular.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ingles">
+            <h2>🔠 Inglês</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Glossário de Palavras e Frases</h3>
+                    <p>O inglês canadense possui algumas particularidades em relação a outras variantes do idioma:</p>
+                    <ul>
+                        <li><strong>Eh?</strong> - Partícula interrogativa usada no final de frases ("It's cold, eh?")</li>
+                        <li><strong>Toque</strong> - Pronúncia característica de palavras como "about" ("a-boot")</li>
+                        <li><strong>Loonie</strong> - Moeda de 1 dólar canadense (com uma loon - ave - na moeda)</li>
+                        <li><strong>Toonie</strong> - Moeda de 2 dólares canadenses</li>
+                        <li><strong>Double-double</strong> - Café com duas porções de açúcar e duas de creme (termo da Tim Hortons)</li>
+                        <li><strong>Poutine</strong> - Prato típico com batatas fritas, queijo coalho e molho de carne</li>
+                        <li><strong>Hydro</strong> - Eletricidade (mesmo quando não é gerada por hidrelétricas)</li>
+                    </ul>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Curiosidades Linguísticas</h3>
+                    <p>O Canadá é oficialmente bilíngue, com inglês e francês como línguas oficiais:</p>
+                    <ul>
+                        <li><strong>Bilinguismo:</strong> Cerca de 18% da população é bilíngue em inglês e francês</li>
+                        <li><strong>Francês no Québec:</strong> O francês québécois tem características próprias</li>
+                        <li><strong>Influências indígenas:</strong> Palavras como "kayak", "igloo" e "mukluk" vêm de línguas indígenas</li>
+                        <li><strong>Ortografia:</strong> Mistura de convenções britânicas e americanas (ex: "colour" mas "center")</li>
+                    </ul>
+                    <p>Além disso, o país reconhece mais de 60 línguas indígenas, embora muitas estejam ameaçadas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="filosofia">
+            <h2>🧠 Filosofia/Sociologia</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Valores Culturais e Crenças</h3>
+                    <p>A sociedade canadense é fundamentada em valores específicos que moldam sua identidade nacional:</p>
+                    <ul>
+                        <li><strong>Multiculturalismo:</strong> Crença na importância de preservar e celebrar diferentes culturas</li>
+                        <li><strong>Tolerância e respeito:</strong> Valorização da diversidade e do diálogo intercultural</li>
+                        <li><strong>Pacifismo:</strong> Tradição de mediação internacional e manutenção da paz</li>
+                        <li><strong>Igualdade:</strong> Compromisso com a igualdade de oportunidades e justiça social</li>
+                        <li><strong>Environmentalismo:</strong> Consciência ambiental e proteção dos recursos naturais</li>
+                    </ul>
+                    <p>Estes valores são refletidos em políticas públicas e no comportamento social dos canadenses.</p>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Organização Social</h3>
+                    <p>O Canadá possui uma estrutura social que combina elementos do liberalismo com o estado de bem-estar social:</p>
+                    <ul>
+                        <li><strong>Sistema de saúde universal:</strong> Acesso gratuito a serviços médicos essenciais</li>
+                        <li><strong>Educação pública:</strong> Ensino fundamental e médio gratuitos e de qualidade</li>
+                        <li><strong>Proteção social:</strong> Programas de assistência a idosos, desempregados e pessoas com deficiência</li>
+                        <li><strong>Pluralismo político:</strong> Sistema multipartidário com ampla participação cidadã</li>
+                        <li><strong>Reconciliação indígena:</strong> Esforços contínuos para abordar injustiças históricas</li>
+                    </ul>
+                    <p>Esta combinação resulta em altos índices de qualidade de vida e desenvolvimento humano.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="economia">
+            <h2>💼 Empreendedorismo/Economia</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Principais Setores Econômicos</h3>
+                    <p>A economia canadense é diversificada e altamente desenvolvida:</p>
+                    <ul>
+                        <li><strong>Recursos naturais:</strong> Petróleo, gás natural, minerais, madeira</li>
+                        <li><strong>Manufatura:</strong> Automóveis, aeronaves, equipamentos de transporte</li>
+                        <li><strong>Tecnologia:</strong> Tecnologia da informação, biotecnologia, jogos digitais</li>
+                        <li><strong>Serviços:</strong> Finanças, seguros, imóveis, turismo</li>
+                        <li><strong>Agropecuária:</strong> Trigo, canola, carne bovina, produtos lácteos</li>
+                    </ul>
+                    <p>O país é um dos maiores exportadores mundiais de energia, minerais e produtos agrícolas.</p>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Turismo</h3>
+                    <p>O turismo é um setor importante para a economia canadense:</p>
+                    <ul>
+                        <li><strong>Atrações naturais:</strong> Cataratas do Niágara, Montanhas Rochosas, Parques Nacionais</li>
+                        <li><strong>Cidades:</strong> Toronto, Vancouver, Montreal, Quebec, Calgary</li>
+                        <li><strong>Eventos:</strong> Festival de Jazz de Montreal, Calgary Stampede, Carnaval de Inverno de Quebec</li>
+                        <li><strong>Ecoturismo:</strong> Observação de auroras boreais, vida selvagem, atividades ao ar livre</li>
+                    </ul>
+                    <p>O setor emprega mais de 1,8 milhões de pessoas e gera receitas significativas para o país.</p>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Cataratas do Niágara">
+                </div>
+            </div>
+        </section>
+        
+        <section id="tecnologia">
+            <h2>💻 Tecnologia da Informação</h2>
+            <div class="disciplina-grid">
+                <div class="disciplina-card">
+                    <h3>Inovações Tecnológicas</h3>
+                    <p>O Canadá tem uma história rica em contribuições tecnológicas e é um centro de inovação:</p>
+                    <ul>
+                        <li><strong>Telecomunicações:</strong> Inventor do telefone, Alexander Graham Bell, fez sua primeira chamada no Canadá</li>
+                        <li><strong>Insulina:</strong> Descoberta por Frederick Banting e Charles Best na Universidade de Toronto</li>
+                        <li><strong>Canadarm:</strong> Braço robótico usado em ônibus espaciais e na Estação Espacial Internacional</li>
+                        <li><strong>IMAX:</strong> Sistema de cinema desenvolvido por canadenses</li>
+                        <li><strong>BlackBerry:</strong> Empresa canadense pioneira em smartphones</li>
+                    </ul>
+                    <p>O país continua a ser um líder em pesquisa e desenvolvimento em várias áreas tecnológicas.</p>
+                </div>
+                <div class="disciplina-card">
+                    <h3>Startups e Ecossistema de Inovação</h3>
+                    <p>O Canadá possui um vibrante ecossistema de startups e tecnologia:</p>
+                    <ul>
+                        <li><strong>Centros de tecnologia:</strong> Toronto, Vancouver, Montreal, Waterloo, Ottawa</li>
+                        <li><strong>Setores fortes:</strong> IA (Inteligência Artificial), fintech, biotecnologia, cleantech</li>
+                        <li><strong>Empresas notáveis:</strong> Shopify, Hootsuite, Slack (fundada por canadense), Wattpad</li>
+                        <li><strong>Incentivos governamentais:</strong> Programas de apoio à pesquisa e desenvolvimento</li>
+                        <li><strong>Educação:</strong> Universidades de classe mundial que produzem talento técnico</li>
+                    </ul>
+                    <p>O país atrai investimentos significativos em tecnologia e é reconhecido globalmente por sua mão de obra qualificada.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Expedição Interdisciplinar: Canadá</p>
+            <p>Projeto desenvolvido para a unidade
